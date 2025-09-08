@@ -61,7 +61,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -130,7 +130,7 @@ MonoBehaviour:
   snake: 0
   explode: {fileID: 1269125919529488448, guid: 7ea08ef8b74b26a48afa6cc4e28d224e, type: 3}
   hp: 3
-  speed: -1.671909
+  speed: -2.0975847
   redCoat: {fileID: 7482616744581020476}
 --- !u!50 &-3057641494079686346
 Rigidbody2D:
