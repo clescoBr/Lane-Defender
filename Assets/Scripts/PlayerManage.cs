@@ -35,6 +35,7 @@ public class PlayerManage : MonoBehaviour
     private InputAction slide;
     private InputAction rotate;
     private InputAction space;
+    private InputAction esc;
 
     private float moveDirection;
     private float slideDirection;
@@ -62,6 +63,7 @@ public class PlayerManage : MonoBehaviour
         slide = playerInput.currentActionMap.FindAction("Slide");
         rotate = playerInput.currentActionMap.FindAction("Rotate");
         space = playerInput.currentActionMap.FindAction("Atack");
+        esc = playerInput.currentActionMap.FindAction("Exit");
 
         move.started += Move_started;
         move.canceled += Move_canceled;
@@ -70,6 +72,7 @@ public class PlayerManage : MonoBehaviour
         rotate.started += Rotate_started;
         space.started += Atack_started;
         space.canceled += Atack_stoped;
+        esc.started += quitGame;
         ammo = 5;
         maxScore = 360;
         StartCoroutine(reloadGun());
@@ -124,6 +127,11 @@ public class PlayerManage : MonoBehaviour
     private void Atack_stoped(InputAction.CallbackContext obj)
     { 
         stillShooting = false;
+    }
+
+    private void quitGame(InputAction.CallbackContext obj)
+    {
+        Application.Quit();
     }
 
     private void Shoot()
@@ -277,6 +285,10 @@ public class PlayerManage : MonoBehaviour
         lives = 3;
         livesText.text = ("Lives: " + lives);
 
+        ammo = 5;
+        ammoText.text = ("Ammo: " + ammo);
+
+
         score = 0;
         updateScore();
 
@@ -292,4 +304,5 @@ public class PlayerManage : MonoBehaviour
         eraser.SetActive(false);
 
     }
+    
 }
